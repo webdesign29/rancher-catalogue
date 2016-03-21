@@ -4,21 +4,29 @@
   description: |
     Application Goaleo
   questions:
+    - variable: "docker_version"
+      default: "v1.0.0"
+      type: string
+      required: true
+      label: "Version de l'image à pull sur Docker-hub"
+      description: "Version à déployer"
     - variable: "ROOT_PASS"
       type: string
       required: true
       label: "Mot de passe root pour connexion ssh"
       description: "Veuillez tapper un mot de passe compliqué suppérieur à 15 caractères"
     - variable: "SYMFONY__ENV"
+      default: prod
       type: string
       required: true
       label: "Environment Symfony"
       description: "Généralement 'dev' ou 'prod'"
     - variable: "SITE_REPO"
+      default: https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git
       type: string
       required: true
-      label: "git clone url"
-      description: defautl value (https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git)
+      label: "Git clone url"
+      description: "Valeure par défaut (https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git)"
 goaleo:
   scale: 1
 goaleo-lb:

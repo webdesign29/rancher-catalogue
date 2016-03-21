@@ -3,7 +3,7 @@ goaleo-app:
     ROOT_PASS: "${ROOT_PASS}"
     SITE_REPO: "${SITE_REPO}"
     SYMFONY__ENV: "${SYMFONY__ENV}"
-  image: "wd29/goaleo"
+  image: "wd29/goaleo:${docker_version}"
   external_links:
     - galera/galera:db
     - elasticsearch/elasticsearch-clients:es
