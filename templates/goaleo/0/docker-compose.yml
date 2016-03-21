@@ -1,7 +1,8 @@
 goaleo-app: 
   environment:
-    ROOT_PASS: "${root_pass}"
-    APP_ENV: "${app_env}"
+    ROOT_PASS: "${ROOT_PASS}"
+    SITE_REPO: "${SITE_REPO}"
+    SYMFONY__ENV: "${SYMFONY__ENV}"
   image: "wd29/goaleo"
   external_links:
     - galera/galera:db

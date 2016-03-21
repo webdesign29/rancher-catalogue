@@ -4,16 +4,21 @@
   description: |
     Application Goaleo
   questions:
-    - variable: "root_pass"
+    - variable: "ROOT_PASS"
       type: string
       required: true
       label: "Mot de passe root pour connexion ssh"
       description: "Veuillez tapper un mot de passe compliqué suppérieur à 15 caractères"
-    - variable: "app_env"
+    - variable: "SYMFONY__ENV"
       type: string
       required: true
       label: "Environment Symfony"
       description: "Généralement 'dev' ou 'prod'"
+    - variable: "SITE_REPO"
+      type: string
+      required: true
+      label: "git clone url"
+      description: defautl value (https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git)
 goaleo:
   scale: 1
 goaleo-lb:
