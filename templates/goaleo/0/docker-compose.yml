@@ -1,18 +1,8 @@
-site-data:
-  tty: true
-  command:
-  - cat
-  image: ubuntu:15.10
-  stdin_open: true
 goaleo-app: 
   environment:
     ROOT_PASS: "${root_pass}"
     APP_ENV: "${app_env}"
   image: "wd29/goaleo"
-  labels:
-    io.rancher.sidekicks: site-data
-  volumes_from:
-    - site-data/var/www/html:/var/www/html
   external_links:
     - galera/galera:db
     - elasticsearch/elasticsearch-clients:es
