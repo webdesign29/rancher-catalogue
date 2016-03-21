@@ -1,0 +1,30 @@
+site-data:
+  tty: true
+  command:
+  - cat
+  image: ubuntu:15.10
+  stdin_open: true
+goaleo-app: 
+  environment:
+    ROOT_PASS: "projet"
+    APP_ENV: "prod"
+  image: "wd29/goaleo"
+  labels:
+    io.rancher.sidekicks: site-data
+  volumes_from:
+    - site-data
+  external_links:
+    - galera/galera:db
+    - elasticsearch/elasticsearch-clients:es
+  ports:
+    - "22"
+
+goaleo-app-lb:
+  expose:
+  - 80:80
+  - 443:443
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - goaleo-app:goaleo-app
+  stdin_open: true

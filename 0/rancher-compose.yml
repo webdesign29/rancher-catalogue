@@ -1,0 +1,22 @@
+.catalog:
+  name: "Goaleo Web App"
+  version: 1.0
+  description: |
+    Goaleo Web App Template
+  questions:
+    - variable: "env_type"
+      type: string
+      required: true
+      label: "Environment Synfony"
+      description: "Généralement 'dev' ou 'prod'"
+goaleo:
+  scale: 1
+goaleo-lb:
+  scale: 1
+  load_balancer_config: {}
+  health_check:
+    port: 80
+    interval: 3000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 3000
