@@ -1,8 +1,8 @@
 .catalog:
-  name: "Goaleo Web App"
-  version: 1.0
+  name: "Goaleo"
+  version: 1.0.1
   description: |
-    Goaleo Web App Template
+    Application Goaleo
   questions:
     - variable: "env_type"
       type: string
