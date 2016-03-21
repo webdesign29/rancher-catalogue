@@ -6,13 +6,13 @@ site-data:
   stdin_open: true
 goaleo-app: 
   environment:
-    ROOT_PASS: "projet"
-    APP_ENV: "prod"
+    ROOT_PASS: "${root_pass}"
+    APP_ENV: "${app_env}"
   image: "wd29/goaleo"
   labels:
     io.rancher.sidekicks: site-data
   volumes_from:
-    - site-data
+    - site-data/var/www/html:/var/www/html
   external_links:
     - galera/galera:db
     - elasticsearch/elasticsearch-clients:es

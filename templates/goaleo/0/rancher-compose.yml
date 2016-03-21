@@ -4,10 +4,15 @@
   description: |
     Application Goaleo
   questions:
-    - variable: "env_type"
+    - variable: "root_pass"
       type: string
       required: true
-      label: "Environment Synfony"
+      label: "Mot de passe root pour connexion ssh"
+      description: "Veuillez tapper un mot de passe compliqué suppérieur à 15 caractères"
+    - variable: "app_env"
+      type: string
+      required: true
+      label: "Environment Symfony"
       description: "Généralement 'dev' ou 'prod'"
 goaleo:
   scale: 1
