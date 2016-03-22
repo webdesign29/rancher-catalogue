@@ -1,12 +1,13 @@
 goaleo-app: 
   environment:
+    APP_VERSION: "${APP_VERSION}"
     ROOT_PASS: "${ROOT_PASS}"
     SITE_REPO: "${SITE_REPO}"
     SITE_BRANCH: "${SITE_BRANCH}"
-    APP_ENV: "${APP_ENV}"
-    DATABASE_NAME: "${DATABASE_NAME}"
-    DATABASE_USER: "${DATABASE_USER}"
-    DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+    SYMFONY__ENV: "${APP_ENV}"
+    SYMFONY__DATABASE__NAME: "${DATABASE_NAME}"
+    SYMFONY__DATABASE__USER: "${DATABASE_USER}"
+    SYMFONY__DATABASE__PASSWORD: "${DATABASE_PASSWORD}"
   image: "wd29/goaleo:${APP_VERSION}"
   external_links:
     - galera/galera-lb:db
