@@ -11,18 +11,6 @@
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
 
-    - variable: "DATABASE_HOST"
-      type: service
-      required: true
-      label: "Lien vers le service MySQL"
-      description: "Base de donnée MySQL"
-
-    - variable: "ES_HOST"
-      type: service
-      required: true
-      label: "ElasticSearch service link"
-      description: "Lien vers le service ElasticSearch"
-
     - variable: "DATABASE_NAME"
       default: "prod_goaleo"
       type: string
