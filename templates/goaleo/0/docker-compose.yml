@@ -14,13 +14,3 @@ goaleo-app:
     - elasticsearch/elasticsearch-clients:es
   ports:
     - "22"
-
-goaleo-app-lb:
-  expose:
-  - 80:80
-  - 443:443
-  tty: true
-  image: rancher/load-balancer-service
-  links:
-  - goaleo-app:goaleo-app
-  stdin_open: true
