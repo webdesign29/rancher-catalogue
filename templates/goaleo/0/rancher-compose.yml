@@ -14,18 +14,18 @@
       default: "prod_goaleo"
       type: string
       required: true
-      label: "DBNAME"
+      label: "SYMFONY__DATABASE__NAME"
       description: "Nom de la base de donnée MySQL"
     - variable: "DATABASE_USER"
       default: "goaleo_usr"
       type: string
       required: true
-      label: "DBUSER"
+      label: "SYMFONY__DATABASE_USER"
       description: "Nom de l'utilisateur MySQL"
     - variable: "DATABASE_PASSWORD"
       type: string
       required: true
-      label: "DBPASSWORD"
+      label: "SYMFONY__DATABASE_PASSWORD"
       description: "Mot de passe de l'utilisateur MySQL"
     - variable: "ROOT_PASS"
       type: string
@@ -36,7 +36,7 @@
       default: prod
       type: string
       required: true
-      label: "Environment Symfony"
+      label: "SYMFONY__ENV"
       description: "Généralement 'dev' ou 'prod'"
     - variable: "SITE_REPO"
       default: git@bitbucket.org:GoaleoTeam/goaleo.git
