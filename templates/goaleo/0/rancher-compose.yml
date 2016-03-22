@@ -1,11 +1,11 @@
 .catalog:
   name: "Goaleo"
-  version: 1.0.2
+  version: 1.0.3
   description: |
     Application Goaleo
   questions:
     - variable: "APP_VERSION"
-      default: "v1.0.0"
+      default: "v1.0.2"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
@@ -52,7 +52,6 @@
       description: "Nom de l'utilisateur MySQL"
 
     - variable: "DATABASE_PASSWORD"
-      default: "v1.0.0"
       type: string
       required: true
       label: "DBPASSWORD"
@@ -77,6 +76,14 @@
       required: true
       label: "Git clone url"
       description: 'Url du dépot à clonner (doit être "pullable" grâce à une clée privée ou publique), Privée de la forme : git@... '
+
+    - variable: "SITE_BRANCH"
+      default: master
+      type: string
+      required: true
+      label: "La branche à clonner dans la box"
+      description: "Permet de sélectionner une branche spécifique pour le déploiement"
+
 goaleo:
   scale: 1
 goaleo-lb:
