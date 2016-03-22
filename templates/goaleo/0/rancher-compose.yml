@@ -1,6 +1,6 @@
 .catalog:
   name: "Goaleo"
-  version: 1.0.3
+  version: 1.0.4
   description: |
     Application Goaleo
   questions:
@@ -22,20 +22,6 @@
       required: true
       label: "ElasticSearch service link"
       description: "Lien vers le service ElasticSearch"
-
-    - variable: "DATABASE_HOST_ALIAS"
-      default: "db"
-      type: string
-      required: true
-      label: "MySQL alias"
-      description: "Alias de la connexion utilisé en interne"
-
-    - variable: "ES_HOST_ALIAS"
-      default: "es"
-      type: string
-      required: true
-      label: "ElasticSearch alias"
-      description: "Alias de la connexion utilisé en interne"
 
     - variable: "DATABASE_NAME"
       default: "prod_goaleo"

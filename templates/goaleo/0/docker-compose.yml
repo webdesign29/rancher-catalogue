@@ -3,14 +3,13 @@ goaleo-app:
     ROOT_PASS: "${ROOT_PASS}"
     SITE_REPO: "${SITE_REPO}"
     APP_ENV: "${APP_ENV}"
-    DATABASE_HOST: "${DATABASE_HOST}"
     DATABASE_NAME: "${DATABASE_NAME}"
     DATABASE_USER: "${DATABASE_USER}"
     DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
   image: "wd29/goaleo:${APP_VERSION}"
   external_links:
-    - "${DATABASE_HOST}":"${DATABASE_HOST_ALIAS}"
-    - "${ES_HOST}":"${ES_HOST_ALIAS}"
+    - "${DATABASE_HOST}":db
+    - "${ES_HOST}":es
   ports:
     - "22"
 
