@@ -8,8 +8,8 @@ goaleo-app:
     DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
   image: "wd29/goaleo:${APP_VERSION}"
   external_links:
-    - "${DATABASE_HOST}":db
-    - "${ES_HOST}":es
+    - galera/galera-lb:db
+    - elasticsearch/elasticsearch-clients:es
   ports:
     - "22"
 
