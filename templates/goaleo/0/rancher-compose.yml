@@ -10,13 +10,11 @@
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
-
     - variable: "DATABASE_NAME"
       default: "prod_goaleo"
       type: string
       required: true
       label: "DBNAME"
-
       description: "Nom de la base de donnée MySQL"
     - variable: "DATABASE_USER"
       default: "goaleo_usr"
@@ -24,33 +22,28 @@
       required: true
       label: "DBUSER"
       description: "Nom de l'utilisateur MySQL"
-
     - variable: "DATABASE_PASSWORD"
       type: string
       required: true
       label: "DBPASSWORD"
       description: "Mot de passe de l'utilisateur MySQL"
-
     - variable: "ROOT_PASS"
       type: string
       required: true
       label: "Mot de passe root pour connexion ssh"
       description: "Veuillez tapper un mot de passe compliqué supérieur à 15 caractères"
-
     - variable: "APP_ENV"
       default: prod
       type: string
       required: true
       label: "Environment Symfony"
       description: "Généralement 'dev' ou 'prod'"
-
     - variable: "SITE_REPO"
       default: git@bitbucket.org:GoaleoTeam/goaleo.git
       type: string
       required: true
       label: "Git clone url"
       description: 'Url du dépot à clonner (doit être "pullable" grâce à une clée privée ou publique), Privée de la forme : git@... '
-
     - variable: "SITE_BRANCH"
       default: cloudify
       type: string
