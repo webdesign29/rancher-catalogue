@@ -9,8 +9,19 @@ goaleo-app:
     SYMFONY__DATABASE__USER: "${DATABASE_USER}"
     SYMFONY__DATABASE__PASSWORD: "${DATABASE_PASSWORD}"
   image: "wd29/goaleo:${APP_VERSION}"
+  links:
+    - app-lb
   external_links:
     - galera/galera-lb:db
     - elasticsearch/elasticsearch-clients:es
   ports:
     - "22"
+
+app-lb:
+  expose:
+  - 80:80
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - goaleo-app:goaleo-app
+  stdin_open: true
