@@ -2,11 +2,15 @@ goaleo-app:
   environment:
     ROOT_PASS: "${ROOT_PASS}"
     SITE_REPO: "${SITE_REPO}"
-    SYMFONY__ENV: "${SYMFONY__ENV}"
-  image: "wd29/goaleo:${docker_version}"
+    APP_ENV: "${APP_ENV}"
+    DATABASE_HOST: "${DATABASE_HOST}"
+    DATABASE_NAME: "${DATABASE_NAME}"
+    DATABASE_USER: "${DATABASE_USER}"
+    DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+  image: "wd29/goaleo:${APP_VERSION}"
   external_links:
-    - galera/galera:db
-    - elasticsearch/elasticsearch-clients:es
+    - "${DATABASE_HOST}":"${DATABASE_HOST_ALIAS}"
+    - "${ES_HOST}":"${ES_HOST_ALIAS}"
   ports:
     - "22"
 

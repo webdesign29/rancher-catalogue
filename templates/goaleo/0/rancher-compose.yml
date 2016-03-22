@@ -4,29 +4,79 @@
   description: |
     Application Goaleo
   questions:
-    - variable: "docker_version"
+    - variable: "APP_VERSION"
       default: "v1.0.0"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
+
+    - variable: "DATABASE_HOST"
+      type: service
+      required: true
+      label: "Lien vers le service MySQL"
+      description: "Base de donnée MySQL"
+
+    - variable: "ES_HOST"
+      type: service
+      required: true
+      label: "ElasticSearch service link"
+      description: "Lien vers le service ElasticSearch"
+
+    - variable: "DATABASE_HOST_ALIAS"
+      default: "db"
+      type: string
+      required: true
+      label: "MySQL alias"
+      description: "Alias de la connexion utilisé en interne"
+
+    - variable: "ES_HOST_ALIAS"
+      default: "es"
+      type: string
+      required: true
+      label: "ElasticSearch alias"
+      description: "Alias de la connexion utilisé en interne"
+
+    - variable: "DATABASE_NAME"
+      default: "prod_goaleo"
+      type: string
+      required: true
+      label: "DBNAME"
+      description: "Nom de la base de donnée MySQL"
+
+    - variable: "DATABASE_USER"
+      default: "goaleo_usr"
+      type: string
+      required: true
+      label: "DBUSER"
+      description: "Nom de l'utilisateur MySQL"
+
+    - variable: "DATABASE_PASSWORD"
+      default: "v1.0.0"
+      type: string
+      required: true
+      label: "DBPASSWORD"
+      description: "Mot de passe de l'utilisateur MySQL"
+
     - variable: "ROOT_PASS"
       type: string
       required: true
       label: "Mot de passe root pour connexion ssh"
-      description: "Veuillez tapper un mot de passe compliqué suppérieur à 15 caractères"
-    - variable: "SYMFONY__ENV"
+      description: "Veuillez tapper un mot de passe compliqué supérieur à 15 caractères"
+
+    - variable: "APP_ENV"
       default: prod
       type: string
       required: true
       label: "Environment Symfony"
       description: "Généralement 'dev' ou 'prod'"
+
     - variable: "SITE_REPO"
-      default: https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git
+      default: git@bitbucket.org:GoaleoTeam/goaleo.git
       type: string
       required: true
       label: "Git clone url"
-      description: "Valeure par défaut (https://webdesign29@bitbucket.org/GoaleoTeam/goaleo.git)"
+      description: 'Url du dépot à clonner (doit être "pullable" grâce à une clée privée ou publique), Privée de la forme : git@... '
 goaleo:
   scale: 1
 goaleo-lb:
