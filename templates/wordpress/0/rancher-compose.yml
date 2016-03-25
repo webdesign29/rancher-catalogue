@@ -1,0 +1,28 @@
+.catalog:
+  name: "WordPress"
+  version: 1.0.0
+  description: |
+    WordPress PHP7
+  questions:
+    - variable: "APP_VERSION"
+      default: "latest"
+      type: string
+      required: true
+      label: "Version de l'image à pull sur Docker-hub"
+      description: "Version à déployer"
+    - variable: "ROOT_PASS"
+      type: string
+      required: true
+      label: "Mot de passe root pour connexion ssh"
+      description: "Veuillez tapper un mot de passe compliqué supérieur à 15 caractères"
+goaleo:
+  scale: 1
+goaleo-lb:
+  scale: 1
+  load_balancer_config: {}
+  health_check:
+    port: 80
+    interval: 3000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 3000
