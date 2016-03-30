@@ -1,0 +1,24 @@
+wp-app: 
+  environment:
+    APP_VERSION: "${APP_VERSION}"
+    ROOT_PASS: "${ROOT_PASS}"
+    SITE_REPO: "${SITE_REPO}"
+    SITE_BRANCH: "${SITE_BRANCH}"
+  image: "wd29/wp-php7:${APP_VERSION}"
+  links:
+    - wp-lb
+  external_links:
+    - galera/galera-lb:db
+  ports:
+    - "22"
+
+wp-lb:
+  expose:
+  - 80:80
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - wp-app:wp-app
+  stdin_open: true
+
+
