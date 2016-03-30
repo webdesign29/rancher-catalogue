@@ -29,3 +29,5 @@ app-lb:
 
 redis:
   image: redis:2.8.13
+  ports:
+    - "6379"
