@@ -5,11 +5,17 @@
     Application Goaleo
   questions:
     - variable: "APP_VERSION"
-      default: "v1.0.19"
+      default: "v1.1.1"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
+    - variable: "LB_LABEL"
+      default: "prod"
+      type: string
+      required: true
+      label: "Tag du host pour déploiement selectif"
+      description: "Cette variable sera utilisé pour déployer uniquement sur les hosts taggé avec app=variable"
     - variable: "DATABASE_NAME"
       default: "prod_goaleo"
       type: string

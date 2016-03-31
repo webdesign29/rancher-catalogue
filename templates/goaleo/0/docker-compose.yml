@@ -1,13 +1,18 @@
 goaleo-app: 
+  labels:
+    # Make stack a global service
+    io.rancher.scheduler.global: 'true'
+    # Make stack only run containers on hosts with a lb=prod label
+    io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
   environment:
-    APP_VERSION: "${APP_VERSION}"
-    ROOT_PASS: "${ROOT_PASS}"
-    SITE_REPO: "${SITE_REPO}"
-    SITE_BRANCH: "${SITE_BRANCH}"
-    SYMFONY__ENV: "${APP_ENV}"
-    SYMFONY__DATABASE__NAME: "${DATABASE_NAME}"
-    SYMFONY__DATABASE__USER: "${DATABASE_USER}"
-    SYMFONY__DATABASE__PASSWORD: "${DATABASE_PASSWORD}"
+    APP_VERSION: ${APP_VERSION}
+    ROOT_PASS: ${ROOT_PASS}
+    SITE_REPO: ${SITE_REPO}
+    SITE_BRANCH: ${SITE_BRANCH}
+    SYMFONY__ENV: ${APP_ENV}
+    SYMFONY__DATABASE__NAME: ${DATABASE_NAME}
+    SYMFONY__DATABASE__USER: ${DATABASE_USER}
+    SYMFONY__DATABASE__PASSWORD: ${DATABASE_PASSWORD}
   image: "wd29/goaleo:${APP_VERSION}"
   links:
     - app-lb
