@@ -33,17 +33,17 @@
       required: true
       label: "SYMFONY__DATABASE_PASSWORD"
       description: "Mot de passe de l'utilisateur MySQL"
-    - variable: "ROOT_PASS"
-      type: string
-      required: true
-      label: "Mot de passe root pour connexion ssh"
-      description: "Veuillez tapper un mot de passe compliqué supérieur à 15 caractères"
     - variable: "APP_ENV"
       default: prod
       type: string
       required: true
       label: "SYMFONY__ENV"
       description: "Généralement 'dev' ou 'prod'"
+    - variable: "ROOT_PASS"
+      type: string
+      required: true
+      label: "Mot de passe root pour connexion ssh"
+      description: "Veuillez tapper un mot de passe compliqué supérieur à 15 caractères"
     - variable: "SITE_REPO"
       default: git@bitbucket.org:GoaleoTeam/goaleo.git
       type: string
@@ -59,12 +59,13 @@
 
 goaleo:
   scale: 1
-goaleo-lb:
-  scale: 1
-  load_balancer_config: {}
   health_check:
     port: 80
     interval: 3000
+    request_line: GET /healthcheck HTTP/1.0
     unhealthy_threshold: 3
     healthy_threshold: 2
-    response_timeout: 3000
+    response_timeout: 4000
+
+redis:
+  scale: 1
