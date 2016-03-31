@@ -10,7 +10,7 @@
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
-    - variable: "LB_LABEL"
+    - variable: "APP_LABEL"
       default: "prod"
       type: string
       required: true
