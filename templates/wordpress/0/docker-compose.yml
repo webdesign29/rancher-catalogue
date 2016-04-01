@@ -1,24 +1,20 @@
 wp-app: 
+  labels:
+    # Make stack a global service
+    io.rancher.scheduler.global: 'true'
+    # Make stack only run containers on hosts with a lb=prod label
+    io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
   environment:
     APP_VERSION: "${APP_VERSION}"
     ROOT_PASS: "${ROOT_PASS}"
     SITE_REPO: "${SITE_REPO}"
     SITE_BRANCH: "${SITE_BRANCH}"
+    DATABASE_NAME: "$DATABASE_NAME"
+    DATABASE_USER: "$DATABASE_USER"
+    DATABASE_PASSWORD: "$DATABASE_PASSWORD"
+    APP_ENV: "$APP_ENV"
   image: "wd29/wp-php7:${APP_VERSION}"
-  links:
-    - wp-lb
   external_links:
     - galera/galera-lb:db
   ports:
     - "22"
-
-wp-lb:
-  expose:
-  - 80:80
-  tty: true
-  image: rancher/load-balancer-service
-  links:
-  - wp-app:wp-app
-  stdin_open: true
-
-
