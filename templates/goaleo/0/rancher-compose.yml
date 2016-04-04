@@ -1,11 +1,11 @@
 .catalog:
   name: "Goaleo"
-  version: 1.1.0
+  version: 1.1.2
   description: |
     Application Goaleo
   questions:
     - variable: "APP_VERSION"
-      default: "v1.1.1"
+      default: "v1.1.2"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
@@ -51,14 +51,13 @@
       label: "Git clone url"
       description: 'Url du dépot à clonner (doit être "pullable" grâce à une clée privée ou publique), Privée de la forme : git@... '
     - variable: "SITE_BRANCH"
-      default: cloudify
+      default: master
       type: string
       required: true
       label: "La branche à clonner dans la box"
       description: "Permet de sélectionner une branche spécifique pour le déploiement"
 
 goaleo:
-  scale: 1
   health_check:
     port: 80
     interval: 3000
@@ -66,6 +65,3 @@ goaleo:
     unhealthy_threshold: 3
     healthy_threshold: 2
     response_timeout: 4000
-
-redis:
-  scale: 1

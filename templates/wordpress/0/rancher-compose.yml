@@ -5,13 +5,13 @@
     WordPress PHP7
   questions:
     - variable: "APP_VERSION"
-      default: "latest"
+      default: "v1.0"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
     - variable: "APP_LABEL"
-      default: "prod"
+      default: "wp7"
       type: string
       required: true
       label: "Tag du host pour déploiement selectif"

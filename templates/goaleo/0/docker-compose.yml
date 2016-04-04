@@ -17,7 +17,7 @@ goaleo-app:
   links:
     - redis
   external_links:
-    - galera/galera-lb:db
+    - galera/galera:db
     - elasticsearch/elasticsearch-clients:es
   ports:
     - "22"
