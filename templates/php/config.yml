@@ -1,0 +1,5 @@
+name: WD29 PHP 7/hhvm Box
+description: |
+   Versatile Nginx + PHP 7/HHVM box for PHP apps
+version: 1.0
+category: App

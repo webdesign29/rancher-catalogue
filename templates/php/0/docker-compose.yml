@@ -1,0 +1,25 @@
+goaleo-app: 
+  labels:
+    # Make stack a global service
+    io.rancher.scheduler.global: 'true'
+    # Make stack only run containers on hosts with a lb=prod label
+    io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
+  environment:
+    APP_VERSION: ${APP_VERSION}
+    SITE_REPO: ${SITE_REPO}
+    SITE_BRANCH: ${SITE_BRANCH}
+    SYMFONY__ENV: ${APP_ENV}
+    ENV: ${APP_ENV}
+    SYMFONY__DATABASE__NAME: ${DATABASE_NAME}
+    DATABASE__NAME: ${DATABASE_NAME}
+    SYMFONY__DATABASE__USER: ${DATABASE_USER}
+    DATABASE__USER: ${DATABASE_USER}
+    SYMFONY__DATABASE__PASSWORD: ${DATABASE_PASSWORD}
+    DATABASE__PASSWORD: ${DATABASE_PASSWORD}
+    STARTUP_SCRIPT: ${STARTUP_SCRIPT}
+  image: "wd29/php:${APP_VERSION}"
+  external_links:
+    - galera/galera:db
+    - elasticsearch/elasticsearch-clients:es
+  ports:
+    - "22"
