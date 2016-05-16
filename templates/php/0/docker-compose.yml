@@ -2,7 +2,7 @@ goaleo-app:
   labels:
     # Make stack a global service
     io.rancher.scheduler.global: 'true'
-    # Make stack only run containers on hosts with a lb=prod label
+    # Make stack only run containers on hosts with a app=label
     io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
   environment:
     APP_VERSION: ${APP_VERSION}

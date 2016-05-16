@@ -20,7 +20,7 @@
       default: "boot_app.sh"
       type: string
       required: true
-      label: "Bash script"
+      label: "App Startup - Bash script"
       description: "Script de build executable lors du post provisionement de la machine"
     - variable: "DATABASE_NAME"
       default: "prod"
