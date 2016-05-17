@@ -1,4 +1,4 @@
-goaleo-app: 
+app:
   labels:
     # Make stack a global service
     io.rancher.scheduler.global: 'true'

@@ -1,11 +1,11 @@
 .catalog:
   name: "WD29 PHP 7/hhvm Box"
-  version: 1.0
+  version: 1.1
   description: |
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v2.0"
+      default: "v64"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
@@ -32,7 +32,7 @@
       default: "prod"
       type: string
       required: true
-      label: "DATABASE__NAME"
+      label: "DATABASE_NAME"
       description: "Nom de la base de donnée MySQL"
     - variable: "DATABASE_USER"
       default: "db_usr"
@@ -63,7 +63,7 @@
       label: "La branche à clonner dans la box"
       description: "Permet de sélectionner une branche spécifique pour le déploiement"
 
-goaleo:
+app:
   health_check:
     port: 80
     interval: 3000
