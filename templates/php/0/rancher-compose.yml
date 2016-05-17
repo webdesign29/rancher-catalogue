@@ -5,11 +5,17 @@
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v1.0"
+      default: "v2.0"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
       description: "Version à déployer"
+    - variable: "APP_INDEX_FILE"
+      default: "app.php"
+      type: string
+      required: true
+      label: "Fichier index"
+      description: "Fichier à utiliser comme index.php par nginx"
     - variable: "APP_LABEL"
       default: "prod"
       type: string

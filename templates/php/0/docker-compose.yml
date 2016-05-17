@@ -6,6 +6,7 @@ goaleo-app:
     io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
   environment:
     APP_VERSION: ${APP_VERSION}
+    APP_INDEX_FILE: ${APP_INDEX_FILE}
     SITE_REPO: ${SITE_REPO}
     SITE_BRANCH: ${SITE_BRANCH}
     SYMFONY__ENV: ${APP_ENV}
@@ -18,8 +19,5 @@ goaleo-app:
     DATABASE__PASSWORD: ${DATABASE_PASSWORD}
     STARTUP_SCRIPT: ${STARTUP_SCRIPT}
   image: "wd29/php:${APP_VERSION}"
-  external_links:
-    - galera/galera:db
-    - elasticsearch/elasticsearch-clients:es
   ports:
     - "22"
