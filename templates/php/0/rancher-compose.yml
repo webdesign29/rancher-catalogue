@@ -5,7 +5,7 @@
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v64"
+      default: "v65"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
