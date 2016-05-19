@@ -1,11 +1,11 @@
 .catalog:
   name: "WD29 PHP 7/hhvm Box"
-  version: 1.1
+  version: 1.0
   description: |
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v65"
+      default: "v2.0"
       type: string
       required: true
       label: "Version de l'image à pull sur Docker-hub"
