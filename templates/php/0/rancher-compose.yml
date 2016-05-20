@@ -5,7 +5,7 @@
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v2.0"
+      default: "v2.1"
       type: string
       required: true
       label: "Version à déployer"
@@ -68,12 +68,24 @@
       required: true
       label: "La branche à clonner dans la box"
       description: "Permet de sélectionner une branche spécifique pour le déploiement"
+    - variable: "HEALTH_CHEK_URL"
+      default: healthcheck
+      type: string
+      required: true
+      label: "Do not prefix with '/'"
+      description: "Healthcheck URL"
+    - variable: "HEALTH_CHEK_TIMEOUT"
+      default: 4000
+      type: string
+      required: true
+      label: "Timeout"
+      description: "Timeout between checks"
 
 app:
   health_check:
     port: 80
     interval: 3000
-    request_line: GET /healthcheck HTTP/1.0
+    request_line: GET /${HEALTH_CHEK_URL} HTTP/1.0
     unhealthy_threshold: 3
     healthy_threshold: 2
-    response_timeout: 4000
+    response_timeout: ${HEALTH_CHEK_TIMEOUT}
