@@ -10,6 +10,12 @@
       required: true
       label: "Version à déployer"
       description: "Version de l'image à pull sur Docker-hub"
+    - variable: "APP_NAME"
+      default: "app"
+      type: string
+      required: true
+      label: "Name"
+      description: "Name of the app in the stack"
     - variable: "EMAIL"
       default: "ben@webdesign29.net"
       type: string
@@ -93,7 +99,7 @@
       label: "Timeout"
       description: "Timeout between checks"
 
-app:
+${APP_NAME}:
   health_check:
     port: 80
     interval: 3000
