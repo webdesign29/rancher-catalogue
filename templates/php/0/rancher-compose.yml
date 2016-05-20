@@ -8,8 +8,26 @@
       default: "v2.0"
       type: string
       required: true
-      label: "Version de l'image à pull sur Docker-hub"
-      description: "Version à déployer"
+      label: "Version à déployer"
+      description: "Version de l'image à pull sur Docker-hub"
+    - variable: "APP_LB"
+      default: "true"
+      type: string
+      required: true
+      label: "Use Traefik ?"
+      description: "Enables Traefik Load Balancing"
+    - variable: "APP_DOMAIN"
+      default: "myapp.domain.com"
+      type: string
+      required: true
+      label: "Domain name"
+      description: "Domain name that should be registered in Traefik"
+    - variable: "APP_PORT"
+      default: "80"
+      type: string
+      required: true
+      label: "Port"
+      description: "Port that traefik should route to"
     - variable: "APP_INDEX_FILE"
       default: "app.php"
       type: string
