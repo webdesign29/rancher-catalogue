@@ -69,10 +69,10 @@
       label: "La branche à clonner dans la box"
       description: "Permet de sélectionner une branche spécifique pour le déploiement"
     - variable: "HEALTH_CHEK_URL"
-      default: healthcheck
+      default: "/"
       type: string
       required: true
-      label: "Do not prefix with '/'"
+      label: "Healthcheck url path"
       description: "Healthcheck URL"
     - variable: "HEALTH_CHEK_TIMEOUT"
       default: 4000
@@ -85,7 +85,7 @@ app:
   health_check:
     port: 80
     interval: 3000
-    request_line: GET /${HEALTH_CHEK_URL} HTTP/1.0
+    request_line: GET ${HEALTH_CHEK_URL} HTTP/1.0
     unhealthy_threshold: 3
     healthy_threshold: 2
     response_timeout: ${HEALTH_CHEK_TIMEOUT}
