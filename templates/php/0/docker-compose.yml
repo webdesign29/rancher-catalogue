@@ -3,7 +3,7 @@ app:
     # Make stack a global service
     io.rancher.scheduler.global: 'true'
     # Make stack only run containers on hosts with a app=label
-    io.rancher.scheduler.affinity:host_label: app=${APP_LABEL}
+    io.rancher.scheduler.affinity:host_label: ${APP_LABEL}=true
     traefik.enable: ${APP_LB}
     traefik.domain: ${APP_DOMAIN}
     traefik.port: ${APP_PORT}
