@@ -28,24 +28,12 @@
       required: true
       label: "Port"
       description: "Port that traefik should route to"
-    - variable: "APP_INDEX_FILE"
-      default: "app.php"
-      type: string
-      required: true
-      label: "Fichier index"
-      description: "Fichier à utiliser comme index.php par nginx"
     - variable: "APP_LABEL"
       default: "prod"
       type: string
       required: true
       label: "Tag du host pour déploiement selectif"
-      description: "Cette variable sera utilisé pour déployer uniquement sur les hosts taggé avec app=variable"
-    - variable: "STARTUP_SCRIPT"
-      default: "boot_app.sh"
-      type: string
-      required: true
-      label: "App Startup - Bash script"
-      description: "Script de build executable lors du post provisionement de la machine"
+      description: "Cette variable sera utilisé pour déployer uniquement sur les hosts taggé avec APP_LABEL=true"
     - variable: "DATABASE_NAME"
       default: "prod"
       type: string
