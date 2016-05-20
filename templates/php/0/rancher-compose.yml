@@ -5,7 +5,7 @@
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v2.1"
+      default: "v3.8"
       type: string
       required: true
       label: "Version à déployer"

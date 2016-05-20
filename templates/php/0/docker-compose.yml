@@ -9,6 +9,8 @@ app:
     traefik.port: ${APP_PORT}
   environment:
     APP_VERSION: ${APP_VERSION}
+    APP_PORT: ${APP_PORT}
+    APP_LB: ${APP_LB}
     APP_LABEL: ${APP_LABEL}
     EMAIL: ${EMAIL}
     URL: ${URL}
@@ -27,3 +29,5 @@ app:
   image: "wd29/php:${APP_VERSION}"
   ports:
     - "22"
+    - "80"
+    - "443"
