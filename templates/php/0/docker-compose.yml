@@ -5,11 +5,14 @@ app:
     # Make stack only run containers on hosts with a app=label
     io.rancher.scheduler.affinity:host_label: ${APP_LABEL}=true
     traefik.enable: ${APP_LB}
-    traefik.domain: ${APP_DOMAIN}
+    traefik.domain: ${URL}
     traefik.port: ${APP_PORT}
   environment:
     APP_VERSION: ${APP_VERSION}
     APP_LABEL: ${APP_LABEL}
+    EMAIL: ${EMAIL}
+    URL: ${URL}
+    SUBDOMAINS: ${SUBDOMAINS}
     SITE_REPO: ${SITE_REPO}
     SITE_BRANCH: ${SITE_BRANCH}
     STARTUP_SCRIPT: ${STARTUP_SCRIPT}
