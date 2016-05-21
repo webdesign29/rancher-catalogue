@@ -10,42 +10,6 @@
       required: true
       label: "Version à déployer"
       description: "Version de l'image à pull sur Docker-hub"
-    - variable: "APP_NAME"
-      default: "app"
-      type: string
-      required: true
-      label: "Name"
-      description: "Name of the app in the stack"
-    - variable: "EMAIL"
-      default: "ben@webdesign29.net"
-      type: string
-      required: true
-      label: "Your email"
-      description: "Used in lets's encrypt certification process"
-    - variable: "URL"
-      default: "myapp.domain.com"
-      type: string
-      required: true
-      label: "Domain name"
-      description: "Domain name that should be registered in Traefik and Certification"
-    - variable: "SUBDOMAINS"
-      default: "www,api,dev,re7"
-      type: string
-      required: true
-      label: "Sub domains"
-      description: "Sub domains up for certification"
-    - variable: "APP_LB"
-      default: "true"
-      type: string
-      required: true
-      label: "Use Traefik ?"
-      description: "Enables Traefik Load Balancing"
-    - variable: "APP_PORT"
-      default: "80"
-      type: string
-      required: true
-      label: "Port"
-      description: "Port that traefik should route to"
     - variable: "APP_LABEL"
       default: "prod"
       type: string
@@ -99,7 +63,7 @@
       label: "Timeout"
       description: "Timeout between checks"
 
-${APP_NAME}:
+app:
   health_check:
     port: 80
     interval: 3000
