@@ -3,3 +3,4 @@ description: |
    Versatile Nginx + PHP 7/HHVM box for PHP apps
 version: 1.0
 category: App
+maintainer: "Benjamin Favre <ben@webdesign29.net>"
