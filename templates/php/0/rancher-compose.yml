@@ -1,11 +1,11 @@
 .catalog:
   name: "WD29 PHP 7/hhvm Box"
-  version: 1.0
+  version: 1.1
   description: |
     Application PHP Scalable
   questions:
     - variable: "APP_VERSION"
-      default: "v3.8"
+      default: "v5.1"
       type: string
       required: true
       label: "Version à déployer"
@@ -16,22 +16,22 @@
       required: true
       label: "Tag du host pour déploiement selectif"
       description: "Cette variable sera utilisé pour déployer uniquement sur les hosts taggé avec APP_LABEL=true"
-    - variable: "DATABASE_NAME"
+    - variable: "APP_DATABASE_NAME"
       default: "prod"
       type: string
       required: true
-      label: "DATABASE_NAME"
+      label: "APP_DATABASE_NAME"
       description: "Nom de la base de donnée MySQL"
-    - variable: "DATABASE_USER"
+    - variable: "APP_DATABASE_USER"
       default: "db_usr"
       type: string
       required: true
-      label: "DATABASE_USER"
+      label: "APP_DATABASE_USER"
       description: "Nom de l'utilisateur MySQL"
-    - variable: "DATABASE_PASSWORD"
+    - variable: "APP_DATABASE_PASSWORD"
       type: string
       required: true
-      label: "DATABASE_PASSWORD"
+      label: "APP_DATABASE_PASSWORD"
       description: "Mot de passe de l'utilisateur MySQL"
     - variable: "APP_ENV"
       default: prod
